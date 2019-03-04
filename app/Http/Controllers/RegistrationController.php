@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Lead;
+use App\Mail\SendNewLead;
 
 class RegistrationController extends Controller
 {
@@ -15,6 +17,18 @@ class RegistrationController extends Controller
   {
     $data =  $request->all();
 
-    dd($data);
+    $newLead = new Lead;
+
+    $newLead->name =  $data['name'];
+    $newLead->email =  $data['email'];
+    $newLead->message =  $data['message'];
+
+    $newLead->save();
+
+    $message = 'Hai inserito i dati correttamente, ti contatteremo a breve';
+
+    Mail::to('Gianluca.Tardio@gmail.com')->send(new SendNewLead($newLead));
+
+    return view('registration.index', compact('message'));
   }
 }
