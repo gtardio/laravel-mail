@@ -10686,7 +10686,8 @@ a.text-dark:focus {
   margin-top: 20px;
 }
 
-.registration .section_2 input {
+.registration .section_2 input,
+.registration .section_2 textarea {
   width: 100%;
   border: 0;
   border-radius: 5px;

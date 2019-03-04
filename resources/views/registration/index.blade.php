@@ -19,7 +19,9 @@
     <div class="container">
       <h2>Contattaci</h2>
       <p>Non è facile prendere la decisione di iniziare il corso Boolean. Lascia la tua email o il tuo numero di telefono per essere ricontattato. Se preferisci chiamaci o lasciaci un messaggio al 02-40031288</p>
-      <form action="index.html" method="post">
+      <form action="{{ route('registration.save') }}" method="post">
+        @csrf
+        @method('POST')
         <div>
           <label for="name">Nome</label>
           <input type="text" name="name" placeholder="Inserisci il tuo nome">
@@ -30,10 +32,10 @@
         </div>
         <div>
           <label for="message">Messaggio</label>
-          <input type="text" name="message" placeholder="Inserisci un messaggio">
+          <textarea name="message" placeholder="Inserisci un messaggio"></textarea>
         </div>
         <div>
-          <button type="button">Invia</button>
+          <button type="submit">Invia</button>
         </div>
       </form>
     </div>

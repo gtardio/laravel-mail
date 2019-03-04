@@ -10,4 +10,11 @@ class RegistrationController extends Controller
   {
     return view('registration.index');
   }
+
+  public function saveNewRegistrationForm(Request $request)
+  {
+    $data =  $request->all();
+
+    dd($data);
+  }
 }

@@ -14,3 +14,4 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/iscriviti', 'RegistrationController@index')->name('registration.index');
+Route::post('/iscriviti', 'RegistrationController@saveNewRegistrationForm')->name('registration.save');
