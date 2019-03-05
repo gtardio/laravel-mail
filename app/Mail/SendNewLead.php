@@ -21,7 +21,7 @@ class SendNewLead extends Mailable
      */
     public function __construct(Lead $lead)
     {
-      $thi->lead =  $lead;
+      $this->lead =  $lead;
     }
 
     /**
